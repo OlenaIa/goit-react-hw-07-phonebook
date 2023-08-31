@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useDispatch, useSelector } from "react-redux";
 import { getPhoneBookValue } from "redux/phoneBookSlice";
@@ -22,8 +22,8 @@ export const Form = () => {
 
     const onSubmitAddContact = (event) => {
         event.preventDefault();
-        const data = { name, number };
-        const newObj = { ...data, id: nanoid() };
+        const newObj = { name, number };
+        // const newObj = { ...data, id: nanoid() };
 
         if (isNameNew(phoneBook, newObj) !== undefined) {
             Notify.warning(`${newObj.name} is already in contacts`, options);
